@@ -2,24 +2,30 @@
 %%% Generates Figure 1 in the paper and Table S1 in the Supplemental
 %%% Material
 
-clear
-clc
+%clear
+%clc
 
 rng('shuffle')
 
 % risk aversion
-eta=1.000001; % uncomment if eta=1
-%eta=2;  % uncomment if eta=2
+if exist('eta')==0
+  eta=1.000001; % uncomment if eta=1
+  %eta=2;  % uncomment if eta=2
+end
 
 % true parameters
 cost0=0;
 cost1=-1;
 
 % number of simulations
-S = 1000;
+if exist('S')==0
+  S = 1000;
+end
 
 % sample size
-N=1000;
+if exist('N')==0
+  N=1000; 
+end
 
 % Grid of T values
 Tgrid=[5 10 20 30 40 50]';
@@ -151,6 +157,7 @@ for jT=1:length(Tgrid)
         Results(jsim,:)=[par1(end) par2(end)];
         Results_se(jsim,:)=[std_GFE std_FE];
         
+        disp(['done with Earnings simulation ' int2str(jsim) ' T=' int2str(T)])
     end
     
     % store results
@@ -187,3 +194,7 @@ disp(sqrt((Results_tot(:,1:2)-(-cost1+cost0)).^2+Results_tot_std(:,1:2).^2))
 
 disp('Mean ratio standard error to standard deviation')
 disp(Results_tot_se(:,1:2)./Results_tot_std(:,1:2))
+
+save(sprintf('results_earnings_gamma%i_N%i.mat', round(eta,2), N), 'Results_tot', ...
+        'Results_tot_std','Results_tot_se', 'Results_K_tot')
+
