@@ -5,7 +5,7 @@
 %clear
 %clc
 
-rng('shuffle')
+rng(RNG_SEED)
 
 % risk aversion
 if exist('eta')==0
@@ -195,6 +195,6 @@ disp(sqrt((Results_tot(:,1:2)-(-cost1+cost0)).^2+Results_tot_std(:,1:2).^2))
 disp('Mean ratio standard error to standard deviation')
 disp(Results_tot_se(:,1:2)./Results_tot_std(:,1:2))
 
-save(sprintf('../results/results_earnings_gamma%i_N%i.mat', round(eta,2), N), 'Results_tot', ...
+save(RES_FILE, 'Results_tot', ...
         'Results_tot_std','Results_tot_se', 'Results_K_tot')
 

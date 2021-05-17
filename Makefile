@@ -1,26 +1,33 @@
 MATLAB = matlab -nodesktop -nodisplay -nosplash
+RS = 634143
 
+# rules for earnings and participation model
+# ------------------------------------------
 
-all:
-	matlab -nodesktop -nodisplay -nosplash -r "eta=2; run('matlab/Code_Earnings_Time_Invariant.m'); exit;"
-	matlab -nodesktop -nodisplay -nosplash -r "run('matlab/Code_Earnings_Time_Invariant.m'); exit;"
+model_earnings: \
+	results/results_earnings_eta1_N1000.mat \
+	results/results_earnings_eta2_N100.mat \
+	results/results_earnings_eta1_N1000.mat \
+	results/results_earnings_eta2_N100.mat 
 
+results/results_earnings_eta1_N%.mat: results
+	$(MATLAB) -r "S=5; eta=1.000001; N=$*; RES_FILE='../$@'; RNG_SEED=$(RS); run('matlab/Code_Earnings_Time_Invariant.m'); exit;"
 
-earnings: 
-	results_earnings_eta1_N1000.mat
-	results_earnings_eta2_N1000.mat
-
-results_earnings_eta1_N1000.mat:
-	matlab -nodesktop -nodisplay -nosplash -r "eta=1.0001; run('matlab/Code_Earnings_Time_Invariant.m'); exit;"
-
-probit_tv: \
-	results/results_tv_N100_rho_m10.mat \
-	results/results_tv_N100_rho_10.mat \
-	results/results_tv_N100_rho_1.mat \
-	results/results_tv_N100_rho_0.mat
+results/results_earnings_eta2_N%.mat: results
+	$(MATLAB) -r "S=5; eta=2; N=$*; RES_FILE='../$@'; RNG_SEED=$(RS); run('matlab/Code_Earnings_Time_Invariant.m'); exit;"
 
 # rules for time varying probits
 # ------------------------------
+
+model_probit_tv: \
+	results/results_tv_N100_rho_m10.mat \
+	results/results_tv_N100_rho_10.mat \
+	results/results_tv_N100_rho_1.mat \
+	results/results_tv_N100_rho_0.mat \
+	results/results_tv_N1000_rho_m10.mat \
+	results/results_tv_N1000_rho_10.mat \
+	results/results_tv_N1000_rho_1.mat \
+	results/results_tv_N1000_rho_0.mat
 
 results/results_tv_N%_rho_m10.mat: results
 	$(MATLAB) -r "S=5; rho=-10; N=$*; RES_FILE='../$@'; run('matlab/Code_Probit_Time_Varying.m'); exit;"
@@ -34,7 +41,8 @@ results/results_tv_N%_rho_0.mat: results
 results/results_tv_N%_rho_1.mat: results
 	$(MATLAB) -r "S=5; rho=1; N=$*; RES_FILE='../$@'; run('matlab/Code_Probit_Time_Varying.m'); exit;"
 
-
+# result folder
+# -------------
 
 results:
 	mkdir results
