@@ -2,7 +2,7 @@
 %%% Generates Figure 2 in the paper and Table S2 in the Supplemental
 %%% Material
 
-rng(514354)
+rng(RNG_SEED)
 
 % Substitution parameter ("sigma" in the paper)
 % rho_grid=[-10;.000001;1;10];
