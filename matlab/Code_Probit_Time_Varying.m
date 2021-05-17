@@ -2,23 +2,33 @@
 %%% Generates Figure 2 in the paper and Table S2 in the Supplemental
 %%% Material
 
-clear
-clc
-
-rng('shuffle')
+rng(514354)
 
 % Substitution parameter ("sigma" in the paper)
-rho_grid=[-10;.000001;1;10];
-rho=rho_grid(1); % change the index to generate the results for other sigma values
+% rho_grid=[-10;.000001;1;10];
+% rho=rho_grid(1); % change the index to generate the results for other sigma values
+
+if exist('rho')==0
+  rho = 0.000001  
+end
 
 % Grid of T values
 Tgrid=[5;10;20;30;40;50];
 
 % sample size
-N=1000;
+if exist('N')==0
+  N=1000;
+end
 
 % number of simulations
-S = 1000;
+if exist('S')==0
+  S = 1000;
+end
+
+% where to store results
+if exist('RES_FILE')==0
+  RES_FILE='tmp.mat'
+end
 
 dimtheta=1;
 
@@ -283,7 +293,7 @@ for jT=1:length(Tgrid)
         % Store results
         Results(jsim,:)=[par1(K*p+1) par2(N+T) theta_init par1_T(K*T+1)];
         Results_se(jsim,:)=[std_GFE std_FE std_IFE std_GFE_T];
-        
+        disp(['done with probit time varying simulation ' int2str(jsim) ' T=' int2str(T)])        
     end
     
     % Store results, 2-way GFE
@@ -344,4 +354,7 @@ disp(Results_tot_rmse(:,1:4))
 
 disp('Mean ratio standard error to standard deviation')
 disp(Results_tot_se(:,1:4)./Results_tot_std(:,1:4))
+
+save(RES_FILE, 'Results_tot', ...
+    'Results_tot_std', 'Results_tot_se', 'Results_tot_rmse', 'Results_K_tot')
 
