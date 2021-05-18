@@ -12,6 +12,14 @@ if exist('rho')==0
   rho = 0.000001  
 end
 
+if exist('NWORKERS')==0
+  NWORKERS=0
+end
+
+if NWORKERS>1
+  parpool('local',NWORKERS)
+end
+
 % Grid of T values
 Tgrid=[5;10;20;30;40;50];
 
@@ -58,7 +66,7 @@ for jT=1:length(Tgrid)
     
     % simulation loop
     % replace by parfor to lower computational time
-    for jsim=1:S
+    parfor (jsim=1:S, NWORKERS)
         
         % DGP: heterogeneity
         xi_i=gamrnd(1,1,N,1);

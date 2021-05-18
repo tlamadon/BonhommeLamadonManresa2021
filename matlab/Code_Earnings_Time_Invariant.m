@@ -27,8 +27,17 @@ if exist('N')==0
   N=1000; 
 end
 
+% number of cores
+if exist('NWORKERS')==0
+  NWORKERS=0
+end
+
+if NWORKERS>1
+    parpool('local',NWORKERS)
+end
+
 % Grid of T values
-Tgrid=[5 10 20 30 40 50]';
+Tgrid=[5 10 15 20 25 30 50]';
 
 % trimming for newey west estimation of the noise level
 qq=1;
@@ -54,7 +63,7 @@ for jT=1:length(Tgrid)
     
     % simulation loop
     % replace by parfor to lower computational time
-    for jsim=1:S
+    parfor (jsim=1:S, NWORKERS)
         
         T=Tgrid(jT);
         

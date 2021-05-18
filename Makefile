@@ -1,8 +1,9 @@
 MATLAB = matlab -nodesktop -nodisplay -nosplash
 RS = 634143
+NWORKERS = 8
 
 # common matlab code arguments
-MARGS = S=5; RNG_SEED=$(RS);
+MARGS = S=1000; RNG_SEED=$(RS); NWORKERS = $(NWORKERS); 
 
 all: model_earnings model_probit_tv
 
