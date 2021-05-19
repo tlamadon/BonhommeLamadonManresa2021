@@ -14,7 +14,8 @@ all: model_earnings model_probit_tv
 model_earnings: \
 	results/results_earnings_eta1_N1000.mat \
 	results/results_earnings_eta2_N1000.mat \
-	results/model_earnings.csv
+	results/model_earnings.csv \ 
+	figures_earnings
 
 figures_earnings: results/model_earnings.csv python/model_earnings_figures.py
 	$(ACTIVATE) blm2-env && cd python && python model_earnings_figures.py

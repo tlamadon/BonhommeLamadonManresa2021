@@ -46,12 +46,8 @@ def extract2(mat,meas_list,name):
 designs = [
     {'filename':'results_earnings_eta1_N1000.mat',
      'design':'N=1000, gamma=1'},
-    {'filename':'results_earnings_eta1_N100.mat',
-     'design':'N=100, gamma=1'},
     {'filename':'results_earnings_eta2_N1000.mat',
-     'design':'N=1000, gamma=2'},
-    {'filename':'results_earnings_eta2_N100.mat',
-     'design':'N=100, gamma=2'}]
+     'design':'N=1000, gamma=2'}]
     
 res_all = []
 for d in designs:
