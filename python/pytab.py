@@ -173,7 +173,8 @@ class Table:
         tab_str = ""
 
         if stand_alone:
-            tab_str += "\\documentclass[preview]{standalone} \n"
+            #tab_str += "\\documentclass[preview]{standalone} \n"
+            tab_str += "\\documentclass{article} \n"
             tab_str += "\\usepackage{booktabs} \n"
             tab_str += "\\begin{document} \n"
 

@@ -35,12 +35,9 @@ def make_tiselection_table(N):
      "Bias":"Bias",
      "std" :"Standard deviation",
      "RMSE" : "Root MSE",
-     "se/std" : "Mean ratio standard error to standard deviation",
-     "Cov" :"Coverage"
+     "se/std" : "Mean ratio standard error to standard deviation"
     }
     
-    if N==1000:
-        del measures['Cov']   
     nm = len(measures) 
         
     tab = (pt.Table().setHeaders(['c', 'r','r','r','r','r', 'r','r','r','r','r']))
