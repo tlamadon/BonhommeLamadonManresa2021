@@ -2,3 +2,5 @@
 .Makefile.swp
 matlab/.Code_Probit_Time_Varying.m.swp
 python/__pycache__/pytab.cpython-37.pyc
+results/tab-tiselection-param-n100-alone.aux
+results/tab-tiselection-param-n100-alone.log

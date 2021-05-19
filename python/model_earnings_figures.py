@@ -75,6 +75,7 @@ for N in tqdm.tqdm([1000,100]):
 # --------------------
 #        Plots
 # --------------------
+Tgrid = [5,10,15,20,25,30]
 
 designs_plot = [ v['design'] for v in designs if v['design'].find('1000')>=0]
 dfl = df2.query("design in {}".format(designs_plot)).query("measure in ['Bias']")  
