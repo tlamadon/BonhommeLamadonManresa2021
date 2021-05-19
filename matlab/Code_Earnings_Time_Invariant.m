@@ -107,9 +107,6 @@ for jT=1:length(Tgrid)
         mom_i=mom_i*mat_scali;
         mom_micro=mom_micro*kron(mat_scali,eye(T));
         
-        
-        
-        
         % noise level
         noise_i=sum(sum((mom_micro-kron(mom_i,ones(1,T))).^2))/(N*T^2);
         if qq==1
@@ -205,5 +202,5 @@ disp('Mean ratio standard error to standard deviation')
 disp(Results_tot_se(:,1:2)./Results_tot_std(:,1:2))
 
 save(RES_FILE, 'Results_tot', ...
-        'Results_tot_std','Results_tot_se', 'Results_K_tot')
+        'Results_tot_std','Results_tot_se', 'Results_K_tot','Tgrid')
 
