@@ -40,10 +40,6 @@ Material
  -  lik.m, lik_bb.m, and lik_IFE2.m are functions to compute the likelihood
 function and scores & hessians of probit models
 
-## Preview of results:
-
-![Earnings](results/fig-tiselection-bias.pdf?raw=true "Optional Title")
-
 ## Final notes
 
 Thank you for using our codes.
