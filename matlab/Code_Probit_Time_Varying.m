@@ -363,6 +363,6 @@ disp(Results_tot_rmse(:,1:4))
 disp('Mean ratio standard error to standard deviation')
 disp(Results_tot_se(:,1:4)./Results_tot_std(:,1:4))
 
-save(RES_FILE, 'Results_tot', ...
+save(RES_FILE, 'Results_tot', 'Tgrid', ...
     'Results_tot_std', 'Results_tot_se', 'Results_tot_rmse', 'Results_K_tot')
 

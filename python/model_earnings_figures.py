@@ -66,7 +66,7 @@ def make_tiselection_table(N):
 
     tab.save_to_Tex( path / Path("tab-tiselection-param-n{}-alone.tex".format(N)),stand_alone=True)
 
-for N in tqdm.tqdm([1000,100]):
+for N in tqdm.tqdm([1000]):
     make_tiselection_table(N)
 
 # --------------------
