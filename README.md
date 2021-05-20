@@ -28,25 +28,26 @@ easily
  - To generate the mat files you only need access to matlab. You can use the
    makefile directly with `make sims`
  - To generate the table and plots from the mat files you will need a few
-   python dependencies. The easiest way to install then is to use the provided
-conda environement file. `conda -f env.yml`
+   python dependencies. You can either:
+     - install then by using the provided cona environment file: `conda env create --file conda-env.yml` and then activating `blm2-env`
+     - install it through pip with `pip install numpy pandas matplotlib tqdm seaborn scipy`
  - To compile the tables you need a working copy of latex. 
 
-## Content
+## Code content
 
 The matlab folder contains 6 matlab files:
 
- - Code_Earnings_Time_Invariant.m replicates Figure 1 in the paper and Table S1 in
+ - `Code_Earnings_Time_Invariant.m` replicates Figure 1 in the paper and Table S1 in
 the Supplemental Material
 
- - Code_Probit_Time_Varying.m replicates Figure 2 in the paper and Table S2 in the
+ - `Code_Probit_Time_Varying.m` replicates Figure 2 in the paper and Table S2 in the
 Supplemental Material
 
- - Code_Probit_Time_Invariant_BinaryCov.m replicates Table S3 in the Supplemental
+ - `Code_Probit_Time_Invariant_BinaryCov.m` replicates Table S3 in the Supplemental
 Material
 
- -  lik.m, lik_bb.m, and lik_IFE2.m are functions to compute the likelihood
-function and scores & hessians of probit models
+ -  `lik.m`, `lik_bb.m`, and `lik_IFE2.m` are functions to compute the likelihood
+function and scores & hessians of probit models.
 
 ## Final notes
 
