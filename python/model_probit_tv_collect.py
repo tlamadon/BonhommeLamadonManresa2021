@@ -9,7 +9,7 @@ import tqdm
 import pytab as pt
 
 path = Path(os.path.expanduser("../results/"))
-Tgrid = [5,10,20,30,40,50]
+Tgrid = [5,10,15,20,25,30,50]
 
 designs = [
     {'filename':'../results/results_tv_N1000_rho_m10.mat',
