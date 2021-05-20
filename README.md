@@ -52,7 +52,8 @@ function and scores & hessians of probit models
 
 Thank you for using our codes.
 
-For any feeback, please contact 
-Stephane at sbonhomme@uchicago.edu
-Thibaut at lamadon@uchicago.edu
-or Elena at elena.manresa@nyu.edu
+For any feeback, please contact: 
+
+ - Stephane at sbonhomme@uchicago.edu
+ - Thibaut at lamadon@uchicago.edu
+ - Elena at elena.manresa@nyu.edu
