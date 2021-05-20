@@ -1,7 +1,9 @@
 # BonhommeLamadonManresa2021
 Replication code for: "Discretizing Unobserved Heterogeneity", by Bonhomme, Lamadon and Manresa
 
-This [repository](https://github.com/tlamadon/BonhommeLamadonManresa2021) contains all the code to replicate the results presented in the paper. Reproducing the results should be close to as simple as typing `make all` in your terminal. See however the require dependencies below.
+Download the latest zip file with all results and source code: [![Generic badge](https://img.shields.io/badge/Download-zip-green.svg)](https://github.com/tlamadon/BonhommeLamadonManresa2021/raw/main/BonhommeLamadonManresa2021.zip)
+
+This repository [![BonhommeLamadonManresa2021](https://badgen.net/badge//gh/BonhommeLamadonManresa2021?icon=github)](https://github.com/tlamadon/BonhommeLamadonManresa2021)  contains all the code to replicate the results presented in the paper. Reproducing the results should be close to as simple as typing `make all` in your terminal. See however the require dependencies below.
 
 As an alternative we provide a separate repository [![pygrpge](https://badgen.net/badge//gh/pygrpfe?icon=github)](https://github.com/tlamadon/pygrpfe) with a pip package and notebooks written in python to reproduce the results from the first model of the paper. You can launch the notebook either on google colab or using binder:
 
