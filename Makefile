@@ -6,23 +6,29 @@ ACTIVATE = /usr/local/python/anaconda3/bin/activate
 # common matlab code arguments
 MARGS = S=1000; RNG_SEED=$(RS); NWORKERS = $(NWORKERS); 
 
-all: model_earnings model_probit_tv
+# create pdfs
+results/tab-%.pdf: results/tab-%.tex
+	cd results && pdflatex -interaction=nonstopmode $(notdir $<)
 
-figures: results/tab-tvprobit-param-n1000-alone.pdf
+# results/tab-earnings-param-n1000-alone.pdf: results/tab-earnings-param-n1000-alone.tex
+# 	cd results && pdflatex -interaction=nonstopmode $(notdir $<)
+
 
 # rules for earnings and participation model
 # ------------------------------------------
 
-model_earnings: \
+FILES_EARNINGS_SIMS = \
 	results/results_earnings_eta1_N1000.mat \
-	results/results_earnings_eta2_N1000.mat \
-	results/model_earnings.csv 
+	results/results_earnings_eta2_N1000.mat
 
-figures_earnings: results/model_earnings.csv python/model_earnings_figures.py
+FILES_EARNINGS_FIGS = \
+	results/tab-tiselection-param-n1000-alone.pdf \
+	results/fig-tiselection-bias.pdf
+
+model_earnings: $(FILES_EARNINGS_SIMS)
+
+results/fig-tiselection-bias.pdf results/tab-tiselection-param-n1000-alone.tex: results/model_earnings.csv python/model_earnings_figures.py
 	$(ACTIVATE) blm2-env && cd python && python model_earnings_figures.py
-
-results/tab%.pdf: results/tab%.tex
-	cd results && pdflatex -interaction=nonstopmode $(notdir $<)
 
 results/results_earnings_eta1_N%.mat: | results
 	$(MATLAB) -r "eta=1.000001; N=$*; RES_FILE='../$@'; $(MARGS); run('matlab/Code_Earnings_Time_Invariant.m'); exit;"
@@ -33,19 +39,26 @@ results/results_earnings_eta2_N%.mat: | results
 results/model_earnings.csv: results/results_earnings_eta1_N1000.mat
 	$(CONDA) activate blm2-env && cd python && python model_earnings_collect.py
 
-results/model_probit_tv.csv: 
-	$(CONDA) activate blm2-env && cd python && python model_probit_tv_collect.py
 
 # rules for time varying probits
 # ------------------------------
 
-model_probit_tv: \
+FILES_PROBIT_TV_SIMS = \
 	results/results_tv_N1000_rho_m10.mat \
 	results/results_tv_N1000_rho_10.mat \
 	results/results_tv_N1000_rho_1.mat \
 	results/results_tv_N1000_rho_0.mat
 
-results/results_tv_N%_rho_m10.mat:  | results
+FILES_PROBIT_TV_FIGS = \
+	results/tab-tvprobit-param-n1000-alone.pdf \
+	results/fig-tvprobit-bias.pdf
+
+model_probit_tv: $(FILES_PROBIT_TV_FIGS)
+
+results/fig-tvprobit-bias.pdf results/tab-tvprobit-param-n1000-alone.tex: results/model_probit_tv.csv
+	$(ACTIVATE) blm2-env && cd python && python model_probit_tv_figures.py
+
+results/results_tv_N%_rho_m10.mat: | results
 	$(MATLAB) -r "rho=-10; N=$*; RES_FILE='../$@'; $(MARGS); run('matlab/Code_Probit_Time_Varying.m'); exit;"
 
 results/results_tv_N%_rho_10.mat: | results
@@ -57,6 +70,9 @@ results/results_tv_N%_rho_0.mat: | results
 results/results_tv_N%_rho_1.mat: | results
 	$(MATLAB) -r "rho=1; N=$*; RES_FILE='../$@'; $(MARGS); run('matlab/Code_Probit_Time_Varying.m'); exit;"
 
+results/model_probit_tv.csv: $(FILES_PROBIT_TV_SIMS)
+	$(CONDA) activate blm2-env && cd python && python model_probit_tv_collect.py
+
 # result folder
 # -------------
 
@@ -64,4 +80,6 @@ results:
 	mkdir results
 
 clean:
-	rm -rf results
+	rm -rf results/*.pdf results/*.tex results/*.csv
+
+all: $(FILES_PROBIT_TV_FIGS) $(FILES_EARNINGS_FIGS)
