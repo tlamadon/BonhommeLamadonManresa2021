@@ -105,7 +105,7 @@ results:
 clean:
 	rm -rf results/*.pdf results/*.tex results/*.csv
 
-all: $(FILES_PROBIT_TV_FIGS) $(FILES_EARNINGS_FIGS)
+all: $(FILES_PROBIT_TV_FIGS) $(FILES_EARNINGS_FIGS) $(FILES_PROBIT_TI_FIGS)
 
 # create zip file
 # ---------------

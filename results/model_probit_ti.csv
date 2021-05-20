@@ -1,0 +1,118 @@
+,estimator,T,P,K,value,measure,design
+0,GFE,20,1,5,-0.1884551959191073,Bias,One covariate
+1,CGFE,20,1,5,-0.0598448802310354,Bias,One covariate
+2,GFE,20,1,10,-0.08326729610724559,Bias,One covariate
+3,CGFE,20,1,10,-0.0450866861437752,Bias,One covariate
+4,GFE,20,1,20,-0.01671362363238804,Bias,One covariate
+5,CGFE,20,1,20,-0.015303704773288684,Bias,One covariate
+6,GFE,20,1,30,0.005940251901058735,Bias,One covariate
+7,CGFE,20,1,30,0.007950914633566786,Bias,One covariate
+8,GFE,20,1,40,0.018240414782976444,Bias,One covariate
+9,CGFE,20,1,40,0.024602165070758186,Bias,One covariate
+10,GFE,20,1,50,0.02590785741951751,Bias,One covariate
+11,CGFE,20,1,50,0.03342504398404289,Bias,One covariate
+12,FE,20,1,0,0.06186018829112028,Bias,One covariate
+13,GFE,20,1,5,0.029128046735154837,Standard deviation,One covariate
+14,CGFE,20,1,5,0.034658498365779375,Standard deviation,One covariate
+15,GFE,20,1,10,0.02715797835081301,Standard deviation,One covariate
+16,CGFE,20,1,10,0.0331888087279606,Standard deviation,One covariate
+17,GFE,20,1,20,0.028488272773323383,Standard deviation,One covariate
+18,CGFE,20,1,20,0.03448847198678786,Standard deviation,One covariate
+19,GFE,20,1,30,0.02915470823309216,Standard deviation,One covariate
+20,CGFE,20,1,30,0.03549653534979989,Standard deviation,One covariate
+21,GFE,20,1,40,0.02931786832789892,Standard deviation,One covariate
+22,CGFE,20,1,40,0.0356588625611668,Standard deviation,One covariate
+23,GFE,20,1,50,0.029617708288060585,Standard deviation,One covariate
+24,CGFE,20,1,50,0.03506686299047281,Standard deviation,One covariate
+25,FE,20,1,0,0.030736084874045087,Standard deviation,One covariate
+26,GFE,20,1,5,0.19069295733066413,Root MSE,One covariate
+27,CGFE,20,1,5,0.06915649787863541,Root MSE,One covariate
+28,GFE,20,1,10,0.08758423596238621,Root MSE,One covariate
+29,CGFE,20,1,10,0.05598487556660678,Root MSE,One covariate
+30,GFE,20,1,20,0.03302918255925203,Root MSE,One covariate
+31,CGFE,20,1,20,0.037731393822272585,Root MSE,One covariate
+32,GFE,20,1,30,0.029753715815083733,Root MSE,One covariate
+33,CGFE,20,1,30,0.03637610569247154,Root MSE,One covariate
+34,GFE,20,1,40,0.034528975292456104,Root MSE,One covariate
+35,CGFE,20,1,40,0.043322292244582554,Root MSE,One covariate
+36,GFE,20,1,50,0.0393500409187424,Root MSE,One covariate
+37,CGFE,20,1,50,0.04844500433819563,Root MSE,One covariate
+38,FE,20,1,0,0.0690752474392771,Root MSE,One covariate
+0,GFE,20,2,5,-0.29287507445551797,Bias,Two covariates
+1,CGFE,20,2,5,-0.08482797831412014,Bias,Two covariates
+2,GFE,20,2,10,-0.20450987950744026,Bias,Two covariates
+3,CGFE,20,2,10,-0.07362634682572877,Bias,Two covariates
+4,GFE,20,2,20,-0.11775496497912907,Bias,Two covariates
+5,CGFE,20,2,20,-0.04600082300784181,Bias,Two covariates
+6,GFE,20,2,30,-0.08081200041695502,Bias,Two covariates
+7,CGFE,20,2,30,-0.030845327943447076,Bias,Two covariates
+8,GFE,20,2,40,-0.056386511905629266,Bias,Two covariates
+9,CGFE,20,2,40,-0.019726297488730893,Bias,Two covariates
+10,GFE,20,2,50,-0.04034147620745099,Bias,Two covariates
+11,CGFE,20,2,50,-0.012159139589416057,Bias,Two covariates
+12,FE,20,2,0,0.07379149107074268,Bias,Two covariates
+13,GFE,20,2,5,0.030572820977748823,Standard deviation,Two covariates
+14,CGFE,20,2,5,0.03668876763122726,Standard deviation,Two covariates
+15,GFE,20,2,10,0.03190978346952392,Standard deviation,Two covariates
+16,CGFE,20,2,10,0.04225798857357295,Standard deviation,Two covariates
+17,GFE,20,2,20,0.03026164101788661,Standard deviation,Two covariates
+18,CGFE,20,2,20,0.03672082675159728,Standard deviation,Two covariates
+19,GFE,20,2,30,0.030089798789605528,Standard deviation,Two covariates
+20,CGFE,20,2,30,0.036146890090102614,Standard deviation,Two covariates
+21,GFE,20,2,40,0.03043745521965969,Standard deviation,Two covariates
+22,CGFE,20,2,40,0.03616400978257793,Standard deviation,Two covariates
+23,GFE,20,2,50,0.030428093922668036,Standard deviation,Two covariates
+24,CGFE,20,2,50,0.03566619226494358,Standard deviation,Two covariates
+25,FE,20,2,0,0.03405619854290062,Standard deviation,Two covariates
+26,GFE,20,2,5,0.29446647792212727,Root MSE,Two covariates
+27,CGFE,20,2,5,0.09242213790623449,Root MSE,Two covariates
+28,GFE,20,2,10,0.20698435954733302,Root MSE,Two covariates
+29,CGFE,20,2,10,0.08489155756131891,Root MSE,Two covariates
+30,GFE,20,2,20,0.12158124318467611,Root MSE,Two covariates
+31,CGFE,20,2,20,0.05885995952020024,Root MSE,Two covariates
+32,GFE,20,2,30,0.0862321019260744,Root MSE,Two covariates
+33,CGFE,20,2,30,0.047518753341441476,Root MSE,Two covariates
+34,GFE,20,2,40,0.06407712076187927,Root MSE,Two covariates
+35,CGFE,20,2,40,0.04119420367197675,Root MSE,Two covariates
+36,GFE,20,2,50,0.05053022464192141,Root MSE,Two covariates
+37,CGFE,20,2,50,0.037681851682671144,Root MSE,Two covariates
+38,FE,20,2,0,0.08127120531674771,Root MSE,Two covariates
+0,GFE,20,3,5,-0.36244597704882087,Bias,Three covariates
+1,CGFE,20,3,5,-0.11017422357499229,Bias,Three covariates
+2,GFE,20,3,10,-0.2750391801410461,Bias,Three covariates
+3,CGFE,20,3,10,-0.09934597417389035,Bias,Three covariates
+4,GFE,20,3,20,-0.20606140262376482,Bias,Three covariates
+5,CGFE,20,3,20,-0.0743852809235177,Bias,Three covariates
+6,GFE,20,3,30,-0.1652248479413514,Bias,Three covariates
+7,CGFE,20,3,30,-0.061337251895576705,Bias,Three covariates
+8,GFE,20,3,40,-0.13544950979281278,Bias,Three covariates
+9,CGFE,20,3,40,-0.049926332058697676,Bias,Three covariates
+10,GFE,20,3,50,-0.11537552412933494,Bias,Three covariates
+11,CGFE,20,3,50,-0.04018976651734796,Bias,Three covariates
+12,FE,20,3,0,0.0888172153759954,Bias,Three covariates
+13,GFE,20,3,5,0.04246317399490756,Standard deviation,Three covariates
+14,CGFE,20,3,5,0.039186782935992176,Standard deviation,Three covariates
+15,GFE,20,3,10,0.035163878225745286,Standard deviation,Three covariates
+16,CGFE,20,3,10,0.04374220697650252,Standard deviation,Three covariates
+17,GFE,20,3,20,0.032652152175273,Standard deviation,Three covariates
+18,CGFE,20,3,20,0.04459475920772079,Standard deviation,Three covariates
+19,GFE,20,3,30,0.032171931331416714,Standard deviation,Three covariates
+20,CGFE,20,3,30,0.042699152934469166,Standard deviation,Three covariates
+21,GFE,20,3,40,0.03281705013428438,Standard deviation,Three covariates
+22,CGFE,20,3,40,0.04132022574780286,Standard deviation,Three covariates
+23,GFE,20,3,50,0.032941339805654675,Standard deviation,Three covariates
+24,CGFE,20,3,50,0.04029356006012265,Standard deviation,Three covariates
+25,FE,20,3,0,0.039308042583483374,Standard deviation,Three covariates
+26,GFE,20,3,5,0.3649249339584734,Root MSE,Three covariates
+27,CGFE,20,3,5,0.11693572378544101,Root MSE,Three covariates
+28,GFE,20,3,10,0.27727792725807415,Root MSE,Three covariates
+29,CGFE,20,3,10,0.10854954286285352,Root MSE,Three covariates
+30,GFE,20,3,20,0.2086323673185695,Root MSE,Three covariates
+31,CGFE,20,3,20,0.0867286721151964,Root MSE,Three covariates
+32,GFE,20,3,30,0.16832790482518364,Root MSE,Three covariates
+33,CGFE,20,3,30,0.07473604305435641,Root MSE,Three covariates
+34,GFE,20,3,40,0.1393683195085218,Root MSE,Three covariates
+35,CGFE,20,3,40,0.06480740458222914,Root MSE,Three covariates
+36,GFE,20,3,50,0.11998601350286772,Root MSE,Three covariates
+37,CGFE,20,3,50,0.056910353320267254,Root MSE,Three covariates
+38,FE,20,3,0,0.09712682409556536,Root MSE,Three covariates

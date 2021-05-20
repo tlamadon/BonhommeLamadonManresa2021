@@ -14,7 +14,7 @@ import pytab as pt
 
 
 path = Path(os.path.expanduser("../results/"))
-df3 = pd.read_csv("../results/model_probit_tv.csv")
+df6 = pd.read_csv("../results/model_probit_ti.csv")
 measures = {
  "Bias":"Bias",
  "std" :"Standard deviation",

@@ -70,7 +70,7 @@ for d in designs:
     
 df6  = pd.concat(res_all)
 
-df6.to_csv("../results/model_pprobit_ti.csv")
+df6.to_csv("../results/model_probit_ti.csv")
 
 
     
