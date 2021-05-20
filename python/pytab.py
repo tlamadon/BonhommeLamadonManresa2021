@@ -176,11 +176,14 @@ class Table:
             #tab_str += "\\documentclass[preview]{standalone} \n"
             tab_str += "\\documentclass{article} \n"
             tab_str += "\\usepackage{booktabs} \n"
+            tab_str += "\\usepackage{graphics} \n"
             tab_str += "\\begin{document} \n"
+            tab_str += "\\resizebox{\\columnwidth}{!}{% \n"
 
         tab_str += self.toTex()
 
         if stand_alone:
+            tab_str += "} \n"
             tab_str += "\\end{document} \n"
 
         with open(filename, 'w') as file:

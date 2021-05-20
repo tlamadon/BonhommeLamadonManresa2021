@@ -8,7 +8,7 @@ MARGS = S=1000; RNG_SEED=$(RS); NWORKERS = $(NWORKERS);
 
 all: model_earnings model_probit_tv
 
-figures: results/tab-tiselection-param-n1000-alone.pdf
+figures: results/tab-tvprobit-param-n1000-alone.pdf
 
 # rules for earnings and participation model
 # ------------------------------------------
@@ -22,7 +22,7 @@ figures_earnings: results/model_earnings.csv python/model_earnings_figures.py
 	$(ACTIVATE) blm2-env && cd python && python model_earnings_figures.py
 
 results/tab%.pdf: results/tab%.tex
-	cd results && pdflatex -interaction=nonstopmode $<
+	cd results && pdflatex -interaction=nonstopmode $(notdir $<)
 
 results/results_earnings_eta1_N%.mat: | results
 	$(MATLAB) -r "eta=1.000001; N=$*; RES_FILE='../$@'; $(MARGS); run('matlab/Code_Earnings_Time_Invariant.m'); exit;"

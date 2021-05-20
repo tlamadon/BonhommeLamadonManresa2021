@@ -38,7 +38,7 @@ measures = {
 }
 
 nm = len(measures)     
-Tgrid = [5,10,20,30,40,50]
+Tgrid = [5,10,15,20,25,30,50]
 
 tab = (pt.Table().setHeaders(['c'] + 4*nm*['r']))
 tab.append(pt.Row(["T"]).append(measures.keys(),format=r"\multicolumn{{1}}{{c}}{{ {} }}")
