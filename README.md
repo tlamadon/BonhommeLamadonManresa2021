@@ -5,6 +5,14 @@ Please also look at additional source code for the approach that we provide at
  [group fixed effect in python](https://github.com/tlamadon/pygrpfe). This repo
 offers interactive tutorial that solve the models presented in the paper. 
 
+## Generated figures:
+
+ - [Figure 1](https://github.com/tlamadon/BonhommeLamadonManresa2021/blob/main/results/fig-tiselection-bias.pdf)
+ - [Figure 2](https://github.com/tlamadon/BonhommeLamadonManresa2021/blob/main/results/fig-tvprobit-bias.pdf)
+ - [Table S1](https://github.com/tlamadon/BonhommeLamadonManresa2021/blob/main/results/tab-tiselection-param-n1000-alone.pdf)
+ - [Table S2](https://github.com/tlamadon/BonhommeLamadonManresa2021/blob/main/results/tab-tvprobit-param-n1000-alone.pdf)
+ - [Table S3](https://github.com/tlamadon/BonhommeLamadonManresa2021/blob/main/results/tab-tvprobit-param-n1000-alone.pdf)
+
 ## Overview
 
  - The matlab folder contains the code to generate the simulations used in the
