@@ -73,6 +73,25 @@ results/results_tv_N%_rho_1.mat: | results
 results/model_probit_tv.csv: $(FILES_PROBIT_TV_SIMS)
 	$(CONDA) activate blm2-env && cd python && python model_probit_tv_collect.py
 
+# rules for conditional
+# ---------------------
+
+FILES_PROBIT_TI_SIMS = \
+	results/results_cond_cov1.mat \
+	results/results_cond_cov2.mat \
+	results/results_cond_cov3.mat 
+
+FILES_PROBIT_TI_FIGS = \
+	results/tab-tiprobit-alone.pdf 
+
+model_cond_cov: $(FILES_PROBIT_TI_SIMS)
+
+results/results_cond_cov%.mat: | results
+	$(MATLAB) -r "rho=-10; N=1000; dimtheta=$*; RES_FILE='../$@'; $(MARGS); run('matlab/Code_Probit_Time_Invariant_BinaryCov.m'); exit;"
+
+results/model_probit_ti.csv: $(FILES_PROBIT_TI_SIMS)
+	$(CONDA) activate blm2-env && cd python && python model_probit_ti_collect.py
+
 # result folder
 # -------------
 

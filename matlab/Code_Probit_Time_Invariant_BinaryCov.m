@@ -1,10 +1,7 @@
 %%% Code for Bonhomme, Lamadon and Manresa (2021), "Discretizing Unobserved Heterogeneity"
 %%% Generates Table S3 in the Supplemental Material
 
-clear
-clc
-
-rng('shuffle')
+rng(RNG_SEED)
 
 % T
 Tgrid=20;
@@ -13,13 +10,28 @@ Tgrid=20;
 Kgrid=[5 10 20 30 40 50]';
 
 % Number of covariates
-dimtheta=1;
+if exist('dimtheta')==0
+    dimtheta=1;
+end
 
-% Number of simulations
-S = 1000;
+% number of simulations
+if exist('S')==0
+    S = 1000;
+end
 
-% Sample size
-N=1000;
+% sample size
+if exist('N')==0
+    N=1000; 
+end
+
+% number of cores
+if exist('NWORKERS')==0
+    NWORKERS=0
+end
+  
+if NWORKERS>1
+    parpool('local',NWORKERS)
+end
 
 Results_tot=zeros(length(Tgrid),2*size(Kgrid,1)+1);
 Results_tot_std=zeros(length(Tgrid),2*size(Kgrid,1)+1);
@@ -40,7 +52,7 @@ for jT=1:length(Tgrid)
     
     % simulation loop
     % replace by parfor to lower computational time
-    for jsim=1:S
+    parfor (jsim=1:S, NWORKERS)
         
         % DGP
         mu=randn(N,1,dimtheta);
@@ -213,6 +225,7 @@ for jT=1:length(Tgrid)
         
         % Store results
         Results(jsim,:)=[par_GFE(:)' par_CGFE(:)' par2(N+1)];
+        disp(['done with probit time invariant simulation ' int2str(jsim) ' T=' int2str(T)])        
     end
     
     % store results
@@ -253,4 +266,5 @@ disp(sqrt((Results_tot(:,size(Kgrid,1)+1:2*size(Kgrid,1))-theta(1)).^2+Results_t
 disp('root MSE, FE')
 disp(sqrt((Results_tot(:,end)-theta(1)).^2+Results_tot_std(:,end).^2))
 
+save(RES_FILE, 'Results_tot', 'Kgrid', 'Results_tot_std')
 
