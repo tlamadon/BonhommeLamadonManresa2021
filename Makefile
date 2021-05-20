@@ -36,9 +36,8 @@ results/results_earnings_eta1_N%.mat: | results
 results/results_earnings_eta2_N%.mat: | results
 	$(MATLAB) -r "eta=2; N=$*; RES_FILE='../$@'; $(MARGS); run('matlab/Code_Earnings_Time_Invariant.m'); exit;"
 
-results/model_earnings.csv: results/results_earnings_eta1_N1000.mat
-	$(CONDA) activate blm2-env && cd python && python model_earnings_collect.py
-
+results/model_earnings.csv: $(FILES_EARNINGS_SIMS)
+	$(ACTIVATE) blm2-env && cd python && python model_earnings_collect.py
 
 # rules for time varying probits
 # ------------------------------
@@ -92,8 +91,13 @@ results/results_cond_cov%.mat: | results
 results/model_probit_ti.csv: $(FILES_PROBIT_TI_SIMS)
 	$(CONDA) activate blm2-env && cd python && python model_probit_ti_collect.py
 
+results/tab-tiprobit-alone.tex: results/model_probit_ti.csv
+	$(ACTIVATE) blm2-env && cd python && python model_probit_ti_figures.py
+
 # result folder
 # -------------
+
+sims: $(FILES_PROBIT_TI_SIMS) $(FILES_PROBIT_TV_SIMS) $(FILES_EARNINGS_SIMS) | results
 
 results:
 	mkdir results
@@ -102,3 +106,18 @@ clean:
 	rm -rf results/*.pdf results/*.tex results/*.csv
 
 all: $(FILES_PROBIT_TV_FIGS) $(FILES_EARNINGS_FIGS)
+
+# create zip file
+# ---------------
+
+FILES_FIGS = $(shell find . -name '*.pdf') $(shell find . -name '*.tex') $(shell find . -name '*.csv')
+FILES_SOURCE = $(shell find . -name '*.m') $(shell find . -name '*.py')
+
+zip: BonhommeLamadonManresa2021.zip
+
+BonhommeLamadonManresa2021.zip: $(FILES_SOURCE) $(FILES_FIGS)
+	zip -r BonhommeLamadonManresa2021.zip \
+		Makefile \
+		README.md \
+		$(FILES_SOURCE) \
+		$(FILES_FIGS)
