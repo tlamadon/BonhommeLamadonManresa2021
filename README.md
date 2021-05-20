@@ -1,6 +1,14 @@
 # BonhommeLamadonManresa2021
 Replication code for: "Discretizing Unobserved Heterogeneity", by Bonhomme, Lamadon and Manresa
 
+This [repository](https://github.com/tlamadon/BonhommeLamadonManresa2021) contains all the code to replicate the results presented in the paper. Reproducing the results should close to as simple as typing `make all` in your terminal. See however the require dependencies below.
+
+As an alternative we provide a separate repository [pygrpge]() with a pip package and notebooks written in python to reproduce the results from the first model of the paper. You can launch this notebook either on google colab or using binder:
+
+
+ - [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1LJAdsWNX279G4T1aYI9fP5Qz2xiRJiff?usp=sharing)
+ - [![Open In Binder](https://mybinder.org/badge_logo.svg )](https://mybinder.org/v2/gh/tlamadon/pygrpfe/HEAD?filepath=docs-src%2Fnotebooks%2Fnb-gfe-example1.ipynb)
+
 Please also look at additional source code for the approach that we provide at
  [group fixed effect in python](https://github.com/tlamadon/pygrpfe). This repo
 offers interactive tutorial that solve the models presented in the paper. 
