@@ -23,7 +23,7 @@ As an alternative we provide a separate repository [![pygrpge](https://badgen.ne
 
  - The matlab folder contains the code to generate the simulations used in the
    paper
- - The Makefile can be used to regenrate all the results. Each matlab file can
+ - The Makefile can be used to regenerate all the results. Each matlab file can
    also be used to generate individual results where parameters can be changed
 easily
  - The results folder contains the results that we generate for the paper using
