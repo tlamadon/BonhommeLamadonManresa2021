@@ -21,7 +21,7 @@ if NWORKERS>1
 end
 
 % Grid of T values
-Tgrid=[5;10;20;30;40;50];
+Tgrid=[ 5; 10; 15; 20; 25; 30; 50 ];
 
 % sample size
 if exist('N')==0
