@@ -10,10 +10,6 @@ MARGS = S=1000; RNG_SEED=$(RS); NWORKERS = $(NWORKERS);
 results/tab-%.pdf: results/tab-%.tex
 	cd results && pdflatex -interaction=nonstopmode $(notdir $<)
 
-# results/tab-earnings-param-n1000-alone.pdf: results/tab-earnings-param-n1000-alone.tex
-# 	cd results && pdflatex -interaction=nonstopmode $(notdir $<)
-
-
 # rules for earnings and participation model
 # ------------------------------------------
 
