@@ -48,7 +48,7 @@ def make_tiselection_table(N):
         if d['design'].find("N={},".format(N))<0:
             continue        
         dfl = df2.query("design=='{}'".format(d['design']))  
-        design = d['design'].replace('N={}, '.format(N),"").replace('gamma=2',"$\\gamma=2$").replace('gamma=1',"$\\gamma=1$")
+        design = d['design'].replace('N={}, '.format(N),"").replace('gamma=2',"$\\eta=2$").replace('gamma=1',"$\\eta=1$")
         tab.append(pt.Row(["", "\multicolumn{{ {} }}{{c}}{{ GFE, {}}}".format(nm,design),
                                "\multicolumn{{ {} }}{{c}}{{ FE, {}}}".format(nm,design)]).setEndSpace(-3))
         tab.addRule([ [2,2+nm-1], [2+nm,2+2*nm-1] ])
@@ -65,6 +65,7 @@ def make_tiselection_table(N):
         tab.lastRow().setEndSpace(0)
 
     tab.save_to_Tex( path / Path("tab-tiselection-param-n{}-alone.tex".format(N)),stand_alone=True)
+    tab.save_to_Tex( path / Path("tab-tiselection-param-n{}.tex".format(N)))
 
 for N in tqdm.tqdm([1000]):
     make_tiselection_table(N)

@@ -94,3 +94,4 @@ tab.append(r)
 tab.lastRow().setEndSpace(0)
 
 tab.save_to_Tex( path / Path("tab-tiprobit-alone.tex"),stand_alone=True)
+tab.save_to_Tex( path / Path("tab-tiprobit.tex"))

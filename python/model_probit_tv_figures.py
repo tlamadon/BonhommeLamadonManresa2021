@@ -79,6 +79,7 @@ for d in designs:
     tab.lastRow().setEndSpace(0)
 
 tab.save_to_Tex( path / Path("tab-tvprobit-param-n{}-alone.tex".format(N)),stand_alone=True)
+tab.save_to_Tex( path / Path("tab-tvprobit-param-n{}.tex".format(N)))
 
 # # --------------------
 # #        Plots

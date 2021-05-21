@@ -23,7 +23,7 @@ FILES_EARNINGS_FIGS = \
 
 model_earnings: $(FILES_EARNINGS_SIMS)
 
-results/fig-tiselection-bias.pdf results/tab-tiselection-param-n1000-alone.tex: results/model_earnings.csv python/model_earnings_figures.py
+results/fig-tiselection-bias.pdf results/tab-tiselection-param-n1000-alone.tex results/tab-tiselection-param-n1000.tex: results/model_earnings.csv python/model_earnings_figures.py
 	$(ACTIVATE) blm2-env && cd python && python model_earnings_figures.py
 
 results/results_earnings_eta1_N%.mat: | results
@@ -50,7 +50,7 @@ FILES_PROBIT_TV_FIGS = \
 
 model_probit_tv: $(FILES_PROBIT_TV_FIGS)
 
-results/fig-tvprobit-bias.pdf results/tab-tvprobit-param-n1000-alone.tex: results/model_probit_tv.csv
+results/fig-tvprobit-bias.pdf results/tab-tvprobit-param-n1000-alone.tex results/tab-tvprobit-param-n1000.tex: results/model_probit_tv.csv
 	$(ACTIVATE) blm2-env && cd python && python model_probit_tv_figures.py
 
 results/results_tv_N%_rho_m10.mat: | results
@@ -87,7 +87,7 @@ results/results_cond_cov%.mat: | results
 results/model_probit_ti.csv: $(FILES_PROBIT_TI_SIMS)
 	$(CONDA) activate blm2-env && cd python && python model_probit_ti_collect.py
 
-results/tab-tiprobit-alone.tex: results/model_probit_ti.csv
+results/tab-tiprobit-alone.tex results/tab-tiprobit.tex: results/model_probit_ti.csv
 	$(ACTIVATE) blm2-env && cd python && python model_probit_ti_figures.py
 
 # result folder
@@ -101,13 +101,18 @@ results:
 clean:
 	rm -rf results/*.pdf results/*.tex results/*.csv
 
+
 all: $(FILES_PROBIT_TV_FIGS) $(FILES_EARNINGS_FIGS) $(FILES_PROBIT_TI_FIGS)
 
+paper: results/tab-tiprobit.tex  results/tab-tvprobit-param-n1000.tex results/tab-tiprobit.tex results/tab-tiselection-param-n1000.tex
 # create zip file
 # ---------------
 
 FILES_FIGS = $(shell find . -name '*.pdf') $(shell find . -name '*.tex') $(shell find . -name '*.csv')
 FILES_SOURCE = $(shell find . -name '*.m') $(shell find . -name '*.py')
+
+clean_figures:
+	rm -rf $(shell find . -name '*.pdf') $(shell find . -name '*.tex')
 
 zip: BonhommeLamadonManresa2021.zip
 
