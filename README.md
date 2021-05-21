@@ -17,7 +17,7 @@ As an alternative we provide a separate repository [![pygrpge](https://badgen.ne
  - [Figure 2](https://github.com/tlamadon/BonhommeLamadonManresa2021/blob/main/results/fig-tvprobit-bias.pdf)
  - [Table S1](https://github.com/tlamadon/BonhommeLamadonManresa2021/blob/main/results/tab-tiselection-param-n1000-alone.pdf)
  - [Table S2](https://github.com/tlamadon/BonhommeLamadonManresa2021/blob/main/results/tab-tvprobit-param-n1000-alone.pdf)
- - [Table S3](https://github.com/tlamadon/BonhommeLamadonManresa2021/blob/main/results/tab-tvprobit-param-n1000-alone.pdf)
+ - [Table S3](https://github.com/tlamadon/BonhommeLamadonManresa2021/blob/main/results/tab-tiprobit-alone.pdf)
 
 ## Overview
 
