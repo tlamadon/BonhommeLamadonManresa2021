@@ -35,7 +35,7 @@ easily
    makefile directly with `make sims`
  - To generate the table and plots from the mat files you will need a few
    python dependencies. You can either:
-     - install then by using the provided cona environment file: `conda env create --file conda-env.yml` and then activating `blm2-env`
+     - install then by using the provided conda environment file: `conda env create --file conda-env.yml` and then activating `blm2-env`
      - install it through pip with `pip install numpy pandas matplotlib tqdm seaborn scipy`
  - To compile the tables you need a working copy of latex. 
 
