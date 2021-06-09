@@ -108,7 +108,7 @@ paper: results/tab-tiprobit.tex  results/tab-tvprobit-param-n1000.tex results/ta
 # create zip file
 # ---------------
 
-FILES_FIGS = $(shell find . -name '*.pdf') $(shell find . -name '*.tex') $(shell find . -name '*.csv')
+FILES_FIGS = $(shell find ./results -name '*.pdf') $(shell find . -name '*alone.tex') $(shell find . -name '*.csv')
 FILES_SOURCE = $(shell find . -name '*.m') $(shell find . -name '*.py')
 
 clean_figures:
@@ -119,6 +119,6 @@ zip: BonhommeLamadonManresa2021.zip
 BonhommeLamadonManresa2021.zip: $(FILES_SOURCE) $(FILES_FIGS)
 	zip -r BonhommeLamadonManresa2021.zip \
 		Makefile \
-		README.md \
+		readme.txt \
 		$(FILES_SOURCE) \
 		$(FILES_FIGS)
